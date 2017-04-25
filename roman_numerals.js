@@ -21,8 +21,8 @@ function to_roman (num) {
         i++
       }
     }
-    return temp.join('');
   }
+  return temp.join('');
 }
 
 // Drive code
