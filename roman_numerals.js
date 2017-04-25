@@ -9,12 +9,12 @@ function to_roman (num) {
                 ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],         // ratusan
                 ["","M","MM","MMM"]]  ;                                     // ribuan
 
-   var numeral = "";
+   var hasil = "";
    var digits = num.toString().split('').reverse();
    for (var i=0; i < digits.length; i++){
-     numeral = romawi[i][parseInt(digits[i])] + numeral;
+     hasil = romawi[i][parseInt(digits[i])] + hasil;
    }
-   return numeral;
+   return hasil;
 
 }
 
