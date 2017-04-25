@@ -7,17 +7,17 @@ function to_roman (num) {
   var hasil=[];
   for(var i=num; 0<i;)
   {
-    //jika i lebih dari sama dengan 1000 maka push "M" ke hasil
+
     if(i>=1000)
     {
 
       hasil.push("M");
       i=i-1000;
     }
-    //jika i lebih dari sama dengan 500 dan kurang dari 1000
+
     else if(i>=500&&i<1000)
     {
-      //jika i lebih dari sama dengan 900 dan kurang dari 1000 maka push "DM" ke hasil
+
        if(i>=900&&i<1000)
       {
         hasil.push("DM");
@@ -25,7 +25,7 @@ function to_roman (num) {
       }
       else
         {
-          //jika yang lainnya push "D"
+
           hasil.push("D");
           i=i%500;
         }
@@ -33,7 +33,7 @@ function to_roman (num) {
     }
     else if(i>=100&&i<500)
     {
-      //jika i lebih dari sama dengan 399 dan kurang dari 500 maka push "CD" ke hasil
+
       if(i>399&&i<500)
       {
         hasil.push("CD");
