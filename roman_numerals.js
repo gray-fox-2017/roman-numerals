@@ -1,150 +1,70 @@
 function to_roman_old (num) {
   // yourimplementation code here
-
 }
 
 function to_roman (num) {
    //your implementation code here
-   if (num > 1000) {
-     var ribuan = Math.sqrt(num/1000);
-   } else {
-     var ribuan = num;
-   }
+   var ribuan = Math.floor(num/1000);
+   var sisaRibuan = num%1000;
+   var ratusan = Math.floor(sisaRibuan/100);
+   var sisaRatusan = sisaRibuan%100;
+   var puluhan = Math.floor(sisaRatusan/10);
+   var sisaPuluhan = sisaRatusan%10;
+   var satuan = sisaPuluhan/1
 
-   if (num > 1000) {
-     var sisaRibuan = num % 1000;
-   } else {
-     var sisaRibuan = num
-   }
+var hasil = []
 
-   if (num > 500) {
-     var limaRatusan = Math.sqrt(sisaRibuan/500);
-   } else {
-     var limaRatusan = num;
-   }
+for (let i=0;i<ribuan;i++) {
+  hasil.push('M');
+}
 
-   if (num > 500) {
-     var sisaLimaRatusan = sisaRibuan%500;
-   } else {
-     var sisaLimaRatusan = num;
-   }
-
-   if (num > 100) {
-     var ratusan = Math.sqrt(sisaLimaRatusan/100);
-   } else {
-     var ratusan = num;
-   }
-
-   if (num > 100) {
-     var sisaRatusan = sisaLimaRatusan%100;;
-   } else {
-     var sisaRatusan = num;
-   }
-
-   if (num > 50) {
-     var limaPuluhan = Math.sqrt(sisaRatusan/50);
-   } else {
-     var limaPuluhan = num;
-   }
-
-   if (num > 50) {
-     var sisaLimaPuluhan = sisaRatusan%50;
-   } else {
-     var sisaLimaPuluhan = num;
-   }
-
-   if (num > 10) {
-     var puluhan = Math.sqrt(sisaLimaPuluhan/10);
-   } else {
-     var puluhan = num;
-   }
-
-   if (num > 10) {
-     var sisaPuluhan = sisaLimaPuluhan%10;
-   } else {
-     var sisaPuluhan = num;
-   }
-
-   if (num>5) {
-     var limaan = Math.sqrt(sisaPuluhan/5);
-   } else {
-     var limaan = num
-   }
-
-   if (num>5) {
-     var sisaLimaan = sisaPuluhan%5;
-   } else {
-     var sisaLimaan = num;
-   }
-
-   var satuan = sisaLimaan;
-
-var hasil = [];
-
-if (num>1000) {
-  for (let i=0;i<ribuan;i++) {
-  hasil.push('M')
+if (ratusan===4) {
+  hasil.push('CD');
+} else if (ratusan === 9) {
+  hasil.push('CM');
+} else if (ratusan >= 5) {
+  hasil.push('D');
+  for (let i=0;i<ratusan-5;i++) {
+    hasil.push('C');
   }
-  for (let i=0;i<limaRatusan;i++) {
-  hasil.push('D')
-  }
+} else {
   for (let i=0;i<ratusan;i++) {
-    hasil.push('C')
+    hasil.push('C');
   }
-  for (let i=0;i<limaPuluhan;i++) {
-  hasil.push('L')
+}
+
+if (puluhan===4) {
+  hasil.push('XL');
+} else if (puluhan === 9) {
+  hasil.push('XC');
+} else if (puluhan >= 5) {
+  hasil.push('L');
+  for (let i=0;i<puluhan-5;i++) {
+    hasil.push('X');
   }
+} else {
   for (let i=0;i<puluhan;i++) {
-  hasil.push('X')
-  }
-  for (let i=0;i<limaan;i++) {
-  hasil.push('V')
-  }
-  if (num>1) {
-    for (let i=0;i<satuan;i++) {
-    hasil.push('I')
-    }
-  }
-  //untuk limaratusan
-} else if (num>500) {
-  for (let i=0;i<limaRatusan;i++) {
-  hasil.push('D')
+    hasil.push('X');
   }
 }
 
-if (num>100) {
-  for (let i=0;i<ratusan;i++) {
-    hasil.push('C')
+if (satuan===4) {
+  hasil.push('IV');
+} else if (satuan === 9) {
+  hasil.push('IX');
+} else if (satuan >= 5) {
+  hasil.push('V');
+  for (let i=0;i<satuan-5;i++) {
+    hasil.push('I');
   }
-}
-
-if (num>50){
-  for (let i=0;i<limaPuluhan;i++) {
-  hasil.push('L')
-  }
-}
-
-if (num>10){
-  for (let i=0;i<puluhan;i++) {
-  hasil.push('X')
-  }
-}
-
-if (num>5){
-  for (let i=0;i<limaan;i++) {
-  hasil.push('V')
-  }
-}
-
-if (num>1) {
+} else {
   for (let i=0;i<satuan;i++) {
-  hasil.push('I')
+    hasil.push('I');
   }
 }
 
-return hasil.join('');
-}
-
+   return hasil.join('');
+ }
 // Drive code
 console.log('My totally sweet testing script\n')
 console.log('input | expected | actual')
