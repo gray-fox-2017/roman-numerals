@@ -1,9 +1,27 @@
 function to_roman_old (num) {
-  // your implementation code here
+  var result = "";
+  var number = [1000,500,100,50,10,5,1]
+  var roman_old = ["M","D","C","L","X","V","I"]
+  for (var i = 0; i < number.length; i++){
+    while(num % number[i] < num){
+      num -= number[i]
+      result += roman_old[i]
+    }
+  }
+  return result
 }
 
 function to_roman (num) {
-  // your implementation code here
+  var hasil = ""
+  var angka = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+  var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+    for (var j = 0; j < angka.length; j++){
+      while(num % angka[j] < num){
+        num -= angka[j]
+        hasil += roman[j]
+      }
+    }
+    return hasil;
 }
 
 // Drive code
