@@ -6,27 +6,27 @@ function to_roman_old (num) {
 function to_roman (num) {
   let rom=[];
   if(num>=1000) {
-    let hasil=Math.floor(num/1000);
-    while(hasil>0) {
+    let jumlahSimbol=Math.floor(num/1000);
+    while(jumlahSimbol>0) {
       rom.push('M');
-      hasil--;
+      jumlahSimbol--;
     }
     num=num%1000;
   }
   if(num>=500) {
-    let hasil=Math.floor(num/500);
-    while(hasil>0) {
+    let jumlahSimbol=Math.floor(num/500);
+    while(jumlahSimbol>0) {
       rom.push('D');
-      hasil--;
+      jumlahSimbol--;
     }
     num=num%500;
   }
   if(num>=100) {
-    let hasil=Math.floor(num/100);
+    let jumlahSimbol=Math.floor(num/100);
     let hitung=0;
-    while(hasil>0) {
+    while(jumlahSimbol>0) {
       rom.push('C');
-      hasil--;
+      jumlahSimbol--;
       hitung++;
       if(hitung==4) {
         while(hitung>1) {
@@ -39,19 +39,19 @@ function to_roman (num) {
     num=num%100;
   }
   if(num>=50) {
-    let hasil=Math.floor(num/50);
-    while(hasil>0) {
+    let jumlahSimbol=Math.floor(num/50);
+    while(jumlahSimbol>0) {
       rom.push('L');
-      hasil--;
+      jumlahSimbol--;
     }
     num=num%50;
   }
   if(num>=10) {
-    let hasil=Math.floor(num/10);
+    let jumlahSimbol=Math.floor(num/10);
     let hitung=0;
-    while(hasil>0) {
+    while(jumlahSimbol>0) {
       rom.push('X');
-      hasil--;
+      jumlahSimbol--;
       hitung++;
       if(hitung==4) {
         while(hitung>1) {
@@ -64,10 +64,10 @@ function to_roman (num) {
     num=num%10;
   }
   if(num>=5) {
-    let hasil=Math.floor(num/5);
-    while(hasil>0) {
+    let jumlahSimbol=Math.floor(num/5);
+    while(jumlahSimbol>0) {
       rom.push('V');
-      hasil--;
+      jumlahSimbol--;
     }
     num=num%5;
     if(num>=4) {
