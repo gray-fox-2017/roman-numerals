@@ -4,8 +4,10 @@
 
 function to_roman (num) {
   // your implementation code here
-  let integer_array = [3000,2900,2500,2400,2000,1900,1500,1400,1000,900,500,400,100,90,50,40,10,9,5,4,1];
-  let roman_array = ['MMM','MMCM','MMD','MMCD','MM','MCM','MD','MCD','M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+//  let integer_array = [3000,2900,2500,2400,2000,1900,1500,1400,1000,900,500,400,100,90,50,40,10,9,5,4,1];
+//  let roman_array = ['MMM','MMCM','MMD','MMCD','MM','MCM','MD','MCD','M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  let integer_array = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  let roman_array = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
   let temp = [];
   if(num>3000){
     return 'angka di atas batas'
