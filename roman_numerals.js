@@ -1,11 +1,70 @@
 function to_roman_old (num) {
-  // your implementation code here
+  // yourimplementation code here
 }
 
 function to_roman (num) {
-  // your implementation code here
+   //your implementation code here
+   var ribuan = Math.floor(num/1000);
+   var sisaRibuan = num%1000;
+   var ratusan = Math.floor(sisaRibuan/100);
+   var sisaRatusan = sisaRibuan%100;
+   var puluhan = Math.floor(sisaRatusan/10);
+   var sisaPuluhan = sisaRatusan%10;
+   var satuan = sisaPuluhan/1
+
+var hasil = []
+
+for (let i=0;i<ribuan;i++) {
+  hasil.push('M');
 }
 
+if (ratusan===4) {
+  hasil.push('CD');
+} else if (ratusan === 9) {
+  hasil.push('CM');
+} else if (ratusan >= 5) {
+  hasil.push('D');
+  for (let i=0;i<ratusan-5;i++) {
+    hasil.push('C');
+  }
+} else {
+  for (let i=0;i<ratusan;i++) {
+    hasil.push('C');
+  }
+}
+
+if (puluhan===4) {
+  hasil.push('XL');
+} else if (puluhan === 9) {
+  hasil.push('XC');
+} else if (puluhan >= 5) {
+  hasil.push('L');
+  for (let i=0;i<puluhan-5;i++) {
+    hasil.push('X');
+  }
+} else {
+  for (let i=0;i<puluhan;i++) {
+    hasil.push('X');
+  }
+}
+
+if (satuan===4) {
+  hasil.push('IV');
+} else if (satuan === 9) {
+  hasil.push('IX');
+} else if (satuan >= 5) {
+  hasil.push('V');
+  for (let i=0;i<satuan-5;i++) {
+    hasil.push('I');
+  }
+} else {
+  for (let i=0;i<satuan;i++) {
+    hasil.push('I');
+  }
+}
+
+   return hasil.join('');
+ }
 // Drive code
 console.log('My totally sweet testing script\n')
 console.log('input | expected | actual')
