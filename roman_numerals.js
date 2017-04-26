@@ -53,64 +53,16 @@ function to_roman_old (num) {
 
 function to_roman (num) {
   // your implementation code here
-  let hasil = ""
-  for (let i = 1; i<=6; i++) {
-    if (num >= 1000) {
-      hasil += 'm'
-      num = num % 1000
-    } else if (num >=500) {
-      if (num <900) {
-        hasil += 'd'
-        num = num % 500
-      } else {
-        hasil += 'cm'
-      }
-    } else if (num >=100) {
-      if (num < 400) {
-        hasil += 'c'
-        num = num % 100
-      } else {
-        hasil += 'cd'
-        num = num % 400
-      }
-    } else if (num >= 50) {
-      if (num <90) {
-        hasil += 'l'
-        num = num % 50
-      } else {
-        hasil += "xc"
-        num = num % 90
-      }
-    } else if (num >= 10) {
-      if (num <40) {
-        hasil += 'x'
-        num = num % 10
-      } else {
-        hasil += 'xl'
-        num = num % 40
-      }
-    } else if (num >=5) {
-      if (num < 9) {
-        hasil += 'v'
-        num = num % 5
-      } else {
-        hasil += 'ix'
-        num = num % 9
-      }
-    } else if (num >= 4) {
-       hasil += 'iv'
-       num = num % 4
-
-    } else if (num <4) {
-      if (num !=0) {
-        hasil += 'i'
-        num = num - 1
-      } else {
-        break
-      }
+  let roman = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+  let decimal = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+  let result = ""
+  for (let i =0 ; i <roman.length; i++) {
+    while (num >= roman[i]) {
+        result += decimal[i]
+        num -= roman[i]
     }
   }
-    return hasil.toUpperCase()
+  return result
 }
 
 // Drive code
