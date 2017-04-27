@@ -20,7 +20,7 @@ function to_roman (num) {
 
        if(i>=900&&i<1000)
       {
-        hasil.push("DM");
+        hasil.push("CM");
         i=i%900;
       }
       else
@@ -118,7 +118,7 @@ console.log('4     | IV       | ', to_roman(4))
 console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
 console.log('1453  | MCDLIII  | ', to_roman(1453))
-console.log('1646  | MDCXLVI  | ', to_roman(1646))
+console.log('1646  | MDCXLVI  | ', to_roman(1999))
 
 module.exports = {
   to_roman_old,
