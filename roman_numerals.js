@@ -1,31 +1,73 @@
 function to_roman (num) {
   // your implementation code here
-    var TulisanArray = "";
-    var ArrNumber = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
-    var ArrRoman = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
-
-    for(var i = 0; i < ArrNumber.length; i++) {
-        //check angka nya ada di Arr Roman Tersebut dengan mengecheck dengan angka tersebut masuk dimana
-        if (num >= ArrNumber[i]) {
-            //jika angka yang true lakukan pengecekan di bawah dari 5 sampai di bawah dari 8
-            if (5 <= num && num <= 8) {
-                // lakukan num - 5 untuk selain Romawi I;
+    var txtRoman = "";
+    if(num < 0 && num >= 3000){
+        console.log("the number must be 1 until 3000")
+    }
+    else {
+        do {
+            if (num >= 1000) {
+                txtRoman += "M";
+                num -= 1000;
+            }
+            else if (num >= 900) {
+                txtRoman += "CM";
+                num -= 900;
+            }
+            else if (num >= 500) {
+                txtRoman += "D";
+                num -= 500;
+            }
+            else if (num >= 400) {
+                txtRoman += "CD";
+                num -= 400;
+            }
+            else if (num >= 100) {
+                txtRoman += "C";
+                num -= 100;
+            }
+            else if (num >= 90) {
+                txtRoman += "XC";
+                num -= 90;
+            }
+            else if (num >= 50) {
+                txtRoman += "L";
+                num -= 50;
+            }
+            else if (num >= 40) {
+                txtRoman += "XL";
+                num -= 40;
+            }
+            else if (num >= 10) {
+                txtRoman = "X";
+                num -= 10;
+            }
+            else if (num >= 9) {
+                txtRoman += "IX";
+                num -= 9;
+            }
+            else if (num >= 5) {
+                txtRoman += "V";
                 num -= 5;
             }
-            // jika angka yang true di bawah dari angka 1 sampai angka ke 3;
-            else if (1 <= num && num <= 3) {
-                // lakukan num - 1 untuk Romawi I;
+            else if (num >= 4) {
+                txtRoman += "IV"
+                num -= 4;
+            }
+            else if (num >= 1) {
+                txtRoman += "I";
                 num -= 1;
             }
-            else {
-                // lakukan pemotongan number;
-                num -= ArrNumber[i];
+            else if (num == 0) {
+                num = 0;
+                txtRoman == "";
+                return txtRoman;
             }
-            TulisanArray += ArrRoman[i];
-            i--;
+        } while (num <= 3000)
+        {
+
         }
     }
-    return TulisanArray;
 }
 
 console.log('My totally sweet testing script for new roman\n')
