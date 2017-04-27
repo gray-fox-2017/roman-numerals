@@ -29,7 +29,7 @@ function to_roman (num) {
     } else if (num >= 50) {
       num -= 50;
       romanChar += "L";
-    } if (num >= 40) {
+    } else if (num >= 40) {
       num -= 40;
       romanChar += "XL";
     } else if (num >= 10) {
@@ -70,7 +70,7 @@ console.log('4     | IV       | ', to_roman(4))
 console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
 console.log('1453  | MCDLIII  | ', to_roman(1453))
-console.log('1646  | MDCXLVI  | ', to_roman(2900))
+console.log('1646  | MDCXLVI  | ', to_roman(1646))
 
 module.exports = {
   to_roman_old,
