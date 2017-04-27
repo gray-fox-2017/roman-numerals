@@ -5,7 +5,7 @@ function to_roman (num) {
         console.log("the number must be 1 until 3000")
     }
     else {
-        do {
+        while(num <= 3000) {
             if (num >= 1000) {
                 txtRoman += "M";
                 num -= 1000;
@@ -63,9 +63,6 @@ function to_roman (num) {
                 txtRoman == "";
                 return txtRoman;
             }
-        } while (num <= 3000)
-        {
-
         }
     }
 }
@@ -73,7 +70,7 @@ function to_roman (num) {
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
 console.log('———|—————|———')
-console.log('4     | IV       | ', to_roman(4))
+console.log('4     | IV       | ', to_roman(1997))
 console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
 console.log('1453  | MCDLIII  | ', to_roman(1453))
