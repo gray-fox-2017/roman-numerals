@@ -6,49 +6,16 @@ function to_roman (num) {
   // your implementation code here
   let romanChar = "";
   let count = 0;
+  let arr_numbers = [1000, 900,500,400,100,90,50,40,10,9,5,4,1];
+  let arr_romans = ["M","CM","D","CD","C","CX","L","XL","X","IX","V","IV","I"]
 
-  while (num > 0) {
-    if (num >= 1000) {
-      num -= 1000;
-      romanChar += "M";
-    } else if (num >= 900) {
-      num -= 900;
-      romanChar += "CM";
-    } else if (num >= 500) {
-      num -= 500;
-      romanChar += "D"
-    } else if (num >= 400) {
-      num -= 400;
-      romanChar += "CD";
-    } else if (num >= 100) {
-      num -= 100;
-      romanChar += "C";
-    } else if (num >= 90) {
-      num -= 90;
-      romanChar += "CX";
-    } else if (num >= 50) {
-      num -= 50;
-      romanChar += "L";
-    } else if (num >= 40) {
-      num -= 40;
-      romanChar += "XL";
-    } else if (num >= 10) {
-      num -= 10;
-      romanChar += "X";
-    } else if (num >= 9) {
-      num -= 9;
-      romanChar += "IX";
-    } else if (num >= 5) {
-      num -= 5;
-      romanChar += "V";
-    } else if (num >= 4) {
-      num -= 4;
-      romanChar += "IV";
-    } else if (num >= 1) {
-      num -= 1;
-      romanChar += "I";
+  // while (num > 0){
+    for(let i=0;i <= arr_numbers.length;i++){
+      while(num >= arr_numbers[i]){
+        num -= arr_numbers[i];
+        romanChar += arr_romans[i]
+      }
     }
-  }
   return romanChar;
 }
 
@@ -71,6 +38,8 @@ console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
 console.log('1453  | MCDLIII  | ', to_roman(1453))
 console.log('1646  | MDCXLVI  | ', to_roman(1646))
+console.log('2519  | MDCXLVI  | ', to_roman(2519))
+
 
 module.exports = {
   to_roman_old,
